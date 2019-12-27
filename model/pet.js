@@ -17,8 +17,8 @@ module.exports.findById = (id, callback) => {
 };
 module.exports.save = (pet, callback) => {
     let {name, status} = pet;
-    if (!name && !status) {
-        callback("Pet is invalid");
+    if (!name || !status) {
+        callback("Pet is invalid!");
         return;
     }
     pet = {

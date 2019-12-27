@@ -21,7 +21,9 @@ let postPet = (req, res) => {
     let pet = req.body;
     Pet.save(pet, (err, newPet) => {
         if(err) {
-            res.send(err);
+            res.send({
+                message: err
+            });
             return;
         }
         res.send({
